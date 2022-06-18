@@ -1,5 +1,7 @@
 # mapa de carreteras federales --------------------------------------------
 
+setwd("C:/Users/mejic/Downloads/mapas/conjunto de datos_m")
+
 
 library(tidyverse)
 library(rgdal)
