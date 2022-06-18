@@ -22,21 +22,21 @@ map_vial%>%
   
 
 map_vial_1$RECUBRI<-factor(map_vial_1$RECUBRI)
+ 
+  ggplot(map_est)+
+     geom_sf()+
+     xlab("Longitud") + ylab("Latitud")+
+     geom_sf(data=map_vial_1, aes(color = RECUBRI), 
+             key_glyph = "point")+
+   theme_economist()+
+  scale_color_wsj(name="Recubrimiento\nde las\ncarreteras")+
+  labs(title = "Carreteras federales, sin peaje, 2021")->mapa_ca
 
- ggplot(map_est)+
-   geom_sf()+
-   theme_bw()+
-   xlab("Longitud") + ylab("Latitud")+
-   geom_sf(data=map_vial_1, aes(color = RECUBRI))+
-   scale_color_brewer(name="Recubrimiento\nde las\ncarreteras",
-                      palette = "Dark2")+
-   labs(title = "Carreteras federales, con y sin peaje, 2021")->mapa_ca
-
-ggsave(mapa_ca, "mapa_ca.png", dpi = 500 )
-
-
+ggsave( "mapa_ca.png", dpi = 500, height = 6, width  = 10  )
 
 
 
-dir()
+
+
+
 
